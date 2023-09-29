@@ -1,10 +1,15 @@
-import sqlite3 as sl
+import sqlite3 as s
 
-con = sl.connect('my-test.db')
+con = s.connect('store.db')
+cur = con.cursor()
 
+#query = "SELECT * FROM USER WHERE age <= 22"
 query = input("Please enter your query\n\n")
 
-with con:
-    data = con.execute(query)
-    for row in data:
-        print(row)
+data = cur.execute(query)
+
+for row in data:
+    print(row)
+
+con.commit()
+con.close()
