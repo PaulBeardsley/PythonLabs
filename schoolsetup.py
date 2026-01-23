@@ -1,6 +1,6 @@
 import sqlite3 as s
 
-con = s.connect('store.db')
+con = s.connect('languageschool.db')
 cur = con.cursor()
 
 emp = ("""
@@ -27,3 +27,4 @@ cur.execute(car)
 
 con.commit()
 con.close()
+
